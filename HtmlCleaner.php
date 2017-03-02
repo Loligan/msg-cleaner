@@ -12,7 +12,8 @@ class HtmlCleaner
         $this->configTidy = array(
             'indent' => true,
             'output-html' => true,
-            'input-encoding' => 'utf8'
+            'input-encoding' => 'utf8',
+            'output-encoding' => 'utf8'
         );
         $this->tidy = new tidy();
     }
