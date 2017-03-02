@@ -1,7 +1,11 @@
 {
     "name": "root/htmlpurifilter-test",
     "require": {
-        "stolz/laravel-html-tidy": "^0.1.1",
-        "ezyang/htmlpurifier": "^4.5.0"
+        "phpunit/phpunit": "^6.0",
+        "ezyang/htmlpurifier": "^4.8"
+    },
+    "require-dev": {
+        "phpunit/php-invoker": "^1.1",
+        "phpunit/dbunit": "^3.0"
     }
 }

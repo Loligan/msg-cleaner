@@ -1,7 +1,7 @@
 <?php
 require_once "vendor/autoload.php";
 
-class Cleaner {
+class HtmlCleaner {
     private $tidy;
     private $configTidy;
     private $purifilter;
@@ -14,7 +14,8 @@ class Cleaner {
         $this->purifilter = new HTMLPurifier($config);
         $this->configTidy= array(
             'clean' => true,
-            'output-html' => true
+            'output-html' => true,
+            'wrap-attributes' => true
         );
         $this->tidy = new tidy();
 
@@ -45,7 +46,7 @@ class Cleaner {
         $header = null;
         $body = null;
 
-        $this->tidyClean($letter);
+        $letter = $this->tidyClean($letter);
         preg_match ("/(<head[^>]*?>.*<.head>)/si",  $letter, $out);
         if($out){
             $header= $out[0];
