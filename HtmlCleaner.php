@@ -68,8 +68,6 @@ class HtmlCleaner
 
     public function clean($letter)
     {
-        $header = null;
-        $body = null;
         $letter = $this->cleanScriptTags($letter);
         $letter = $this->tidyClean($letter);
         $result = $this->woodCleaner($letter);
