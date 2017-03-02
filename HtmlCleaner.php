@@ -27,7 +27,7 @@ class HtmlCleaner
     }
 
 
-    private function woodCleaner($letter)
+    private function cleanOtherScripts($letter)
     {
         $letter = explode('<code>', $letter);
         $codes = array();
@@ -70,7 +70,7 @@ class HtmlCleaner
     {
         $letter = $this->tidyClean($letter);
         $letter = $this->cleanScriptTags($letter);
-        $result = $this->woodCleaner($letter);
+        $result = $this->cleanOtherScripts($letter);
         $result = $this->tidyClean($result);
         return $result;
     }
