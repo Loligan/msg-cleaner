@@ -68,8 +68,8 @@ class HtmlCleaner
 
     public function clean($letter)
     {
-        $letter = $this->cleanScriptTags($letter);
         $letter = $this->tidyClean($letter);
+        $letter = $this->cleanScriptTags($letter);
         $result = $this->woodCleaner($letter);
         $result = $this->tidyClean($result);
         return $result;
