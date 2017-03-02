@@ -1,7 +1,5 @@
 <?php
-//require_once "../vendor/autoload.php";
 require_once "../HtmlCleaner.php";
-
 class EmailTests extends \PHPUnit\Framework\TestCase
 {
     public function removeJSInHead()
@@ -15,15 +13,12 @@ class EmailTests extends \PHPUnit\Framework\TestCase
         if(stristr($result,"<div>")){
             throw new Exception("Tags <a> not be closed");
         }
-
     }
-
     public function removeJSInBody()
     {
         $letter = file_get_contents("letters/removeJSInBody.html");
         $cleaner = new Cleaner();
         $cleaner->clean($letter);
-
     }
 
     public function closeTags(){
